@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+.red{
+    color: brown;
+}
+
+.thin{
+    font-weight: 200px;
+}
+
+.italic{
+     font-style: italic;
+}
+
+.active{
+    letter-spacing: 0.5em;/*字符间的边距*/
+}
+</style>
+<body>
+    <div id="app">
+        <!--<h1 :class="['thin,italic'flag?'active':'']">这是一条艰难的学画画之路</h1>-->
+        <h1 :class="['thin,italic',{'active':flag}]">这是一条艰难的学画画之路</h1>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag:true
+                },
+            methods: { },
+        });
+    </script>
+</body>
+</html>

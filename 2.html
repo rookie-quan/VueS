@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+    .inner {
+        height: 150px;
+        background-color: darkcyan;
+    }
+
+    .outer {
+        padding: 40px;
+        background-color: rebeccapurple;
+    }
+</style>
+
+<body>
+
+    <div id="app">
+        <!--<div class="inner" @click="handler">
+            <input type="button" value="pink" @click.stop="bthandler">
+            使用.stop阻止冒泡 
+         
+        <a href="http://www.baidu.com"  @click.prevent="linkClick">去百度</a>
+    </div>
+        <div class="inner" @click.self="handler">
+            <input type="button" value="爱的价格" @click.stop="bthandler">
+        
+    </div>-->
+
+        <div class="outer" @click="div2Handler">
+            <div class="inner" @click.self="handler">
+                <input type="button" value="chuota" @click="bthandler">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+                handler() {
+                    console.log('插画师张中权！')
+                },
+                bthandler() {
+                    console.log('原画师张中权！')
+                },
+                linkClick() {
+                    console.log('触发')
+                },
+                div2Handler() {
+
+                },
+            }
+        })
+    </script>
+
+</body>
+
+</html>

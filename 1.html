@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+        <div v-text="msg2"></div>
+        <div v-html="msg3">121212</div>
+        <!--v-bind：是vue中提供的用于绑定属性的指令-->
+        <!--v-bind：指令可以被简写为：要绑定的属性-->
+        
+
+
+        <!--vue中提供了v-on事件绑定机制-->
+        <input type="button" value="按钮" :title="mytitle+'123'">
+
+         <input type="button" value="按钮" @click="show">
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '123',
+                msg2: '我想成为原画师！',
+                msg3:'<h1>我想成为顶尖画师！</h1>',
+                mytitle: '死靓仔'
+            },
+            //v-bind会把数据当成JS表达式
+            methods:{
+                //这个methods属性中定义了当前的Vue实例的所有可用方法
+                show:function(){
+                    alert('Hello')
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+<!--插值表达式v-cloak解决闪烁问题-->
+<!--v-text会覆盖原有元素中的内容-->
+<!--v-html和v-text差不多，但是转换成Js编译，比如将h1编译出来-->
+<!--v-bind:   Vue提供的属性绑定机制    缩写是： -->
+<!--v-on      Vue提供的事件绑定机制    缩写是@-->
